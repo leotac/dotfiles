@@ -1,0 +1,11 @@
+[user]
+	name = Leonardo Taccari
+	email = floor51@gmail.com
+[push]
+	default = matching
+[color]
+	status = auto
+	branch = auto
+[github]
+	user = sbebo
+	token = 7b1e7ab0d5445a4d265c6af401d0c36b
