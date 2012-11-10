@@ -4,7 +4,7 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent " automatic indent new lines
 set smartindent " be smart about it
-set nowrap " do not wrap lines
+"set nowrap " do not wrap lines
 
 set ruler
 set number
@@ -20,4 +20,5 @@ endfunction
 map ,s :call StripWhitespace ()<CR>
 
 
-au BufRead,BufNewFile *.mod set filetype=ampl 
+au BufRead,BufNewFile *.mod set filetype=ampl
+au BufRead,BufNewFile *.dat set filetype=ampl 

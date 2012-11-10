@@ -11,6 +11,8 @@ ZSH_THEME="robbyrussell"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias lsb='ls --color=tty -B'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -34,7 +36,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/leo/gurobi/linux32/bin
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/leo/gurobi/linux32/bin:/opt/bin:/home/leo/sbt/bin
 
 # Go: Combines cd and ls for directories, or opens files in EMACS.
 go() {
