@@ -1,4 +1,6 @@
 syntax on
+filetype indent on
+filetype on
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -20,5 +22,3 @@ endfunction
 map ,s :call StripWhitespace ()<CR>
 
 
-au BufRead,BufNewFile *.mod set filetype=ampl
-au BufRead,BufNewFile *.dat set filetype=ampl 
