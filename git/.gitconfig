@@ -5,7 +5,6 @@
 	default = matching
 [core]
         excludesfile = ~/.gitignore_global
-
 [color]
 	status = auto
 	branch = auto
