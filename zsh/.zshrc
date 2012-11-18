@@ -36,7 +36,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/leo/gurobi/linux32/bin:/opt/bin:/home/leo/sbt/bin
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/leo/gurobi/linux32/bin:/opt/ampl
 
 # Go: Combines cd and ls for directories, or opens files in EMACS.
 go() {
