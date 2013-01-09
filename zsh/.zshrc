@@ -13,6 +13,9 @@ ZSH_THEME="robbyrussell"
 
 alias lsb='ls --color=tty -B'
 
+alias gcg='/opt/scip/gcg-1.0.0/bin/gcg'
+alias scip='/opt/scip/scip-3.0.0/bin/scip'
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
