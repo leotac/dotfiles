@@ -1,3 +1,4 @@
+colorscheme desert
 syntax on
 filetype indent on
 filetype on
