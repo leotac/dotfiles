@@ -3,8 +3,8 @@ syntax on
 filetype indent on
 filetype on
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=3
+set softtabstop=3
 set autoindent " automatic indent new lines
 set smartindent " be smart about it
 "set nowrap " do not wrap lines

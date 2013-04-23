@@ -13,8 +13,6 @@ ZSH_THEME="robbyrussell"
 
 alias lsb='ls --color=tty -B'
 
-alias gcg='/opt/scip/gcg-1.0.0/bin/gcg'
-alias scip='/opt/scip/scip-3.0.0/bin/scip'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -38,8 +36,16 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+
+
 # Customize to your needs...
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/home/leo/gurobi/linux32/bin:/opt/ampl
+export GUROBI_HOME=/opt/gurobi510/linux64
+export ILOG_LICENSE_FILE=/opt/ibm_ilog_access_keys/access+ampl.ilm
+
+
+export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/bin
+
+export LD_LIBRARY_PATH=$GUROBI_HOME/lib
 
 # Go: Combines cd and ls for directories, or opens files in EMACS.
 go() {
