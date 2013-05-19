@@ -12,7 +12,7 @@ ZSH_THEME="robbyrussell"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias lsb='ls --color=tty -B'
-
+alias git='nocorrect git'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -36,7 +36,7 @@ plugins=(git ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
 
-
+autoload zmv
 
 # Customize to your needs...
 export GUROBI_HOME=/opt/gurobi510/linux64
