@@ -3,7 +3,7 @@ filetype off
 
 execute pathogen#infect()
 
-let g:jedi#show_function_definition = "0" " Do not show doc window
+let g:jedi#show_function_definition = 0 " Do not show doc window
 let g:jedi#use_tabs_not_buffers = 0 " I use buffers
 let g:jedi#autocompletion_command = "<C-n>"
 

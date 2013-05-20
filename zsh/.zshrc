@@ -32,7 +32,13 @@ alias git='nocorrect git'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ssh-agent)
+SSHPID=`ps ax|grep -c "[s]sh-agent"`
+if (( $SSHPID == 0 ))
+then
+   plugins=(git ssh-agent)
+else
+   plugins=(git)
+fi
 
 source $ZSH/oh-my-zsh.sh
 
