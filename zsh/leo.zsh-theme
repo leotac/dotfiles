@@ -2,7 +2,7 @@
 typeset -A host_repr
 
 # Translate hostnames into shortened, colorcoded strings
-host_repr=('orlab-lawler' "lawl" 'ubuntu' "home" 'lagrange' "grange")
+host_repr=('orlab-lawler' "lawler" 'ubuntu' "home" 'lagrange' "lagrange")
 
 PROMPT='%{$fg[yellow]%}[$host_repr[$(hostname)]]%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}'
 
