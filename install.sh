@@ -15,4 +15,4 @@ ln -fs ~/dotfiles/git/.gitconfig ~
 ln -fs ~/dotfiles/git/.gitignore_global ~
 
 echo "Copy oh-my-zsh theme"
-cp ~/dotfiles/zsh/leo.zsh-theme ~/.oh-my-zsh/themes
+ln -fs ~/dotfiles/zsh/leo.zsh-theme ~/.oh-my-zsh/themes/
