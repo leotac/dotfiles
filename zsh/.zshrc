@@ -13,6 +13,7 @@ ZSH_THEME="leo"
 
 alias lsb='ls --color=tty -B'
 alias git='nocorrect git'
+alias rm='rm -i'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
