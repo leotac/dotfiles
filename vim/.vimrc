@@ -7,6 +7,8 @@ filetype off
 "let g:jedi#use_tabs_not_buffers = 0 " I use buffers
 "let g:jedi#autocompletion_command ="<C-n>"
 
+let g:neocomplcache_enable_at_startup = 1
+
 colorscheme desert
 syntax on
 filetype indent on
