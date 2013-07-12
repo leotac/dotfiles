@@ -33,17 +33,20 @@ alias rm='rm -i'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-SSHPID=`ps ax|grep -c "[s]sh-agent"`
-if (( $SSHPID == 0 ))
-then
-   plugins=(git ssh-agent)
-else
+
+#SSHPID=`ps ax|grep -c "[s]sh-agent"`
+#if (( $SSHPID == 0 ))
+#then
+#   plugins=(git ssh-agent)
+#else
    plugins=(git)
-fi
+#fi
 
 source $ZSH/oh-my-zsh.sh
 
 autoload zmv
+
+source ~/dotfiles/zsh/ssh-agent.sh
 
 # Customize to your needs...
 export GUROBI_HOME=/opt/gurobi550/linux64
