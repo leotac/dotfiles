@@ -52,7 +52,7 @@ export ILOG_LICENSE_FILE=/opt/ibm_ilog_access_keys/access+ampl.ilm
 
 export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/bin
 
-export LD_LIBRARY_PATH=$GUROBI_HOME/lib
+export LD_LIBRARY_PATH=$GUROBI_HOME/lib:/usr/local/lib
 
 # Go: Combines cd and ls for directories, or opens files in EMACS.
 go() {
