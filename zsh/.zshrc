@@ -47,7 +47,7 @@ source $ZSH/oh-my-zsh.sh
 autoload zmv
 
 # Customize to your needs...
-export GUROBI_HOME=/opt/gurobi550/linux64
+export GUROBI_HOME=/opt/gurobi560/linux64
 export LD_LIBRARY_PATH=$GUROBI_HOME/lib
 
 export ILOG_LICENSE_FILE=/opt/ibm_ilog_access_keys/access+ampl.ilm
