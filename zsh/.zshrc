@@ -108,3 +108,5 @@ function svns () {
   # Recursively find all files in an svn checkout.
   find . -path "*.svn" -prune -or -type f -print0 | xargs -0 $@
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

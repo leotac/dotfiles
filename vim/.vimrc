@@ -7,7 +7,24 @@ filetype off
 "let g:jedi#use_tabs_not_buffers = 0 " I use buffers
 "let g:jedi#autocompletion_command ="<C-n>"
 
-let g:neocomplcache_enable_at_startup = 1
+
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+
+" OPTIONAL: This enables automatic indentation as you type.
+filetype indent on
+
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+
+let g:Imap_UsePlaceHolders = 0
+
+let g:neocomplcache_enable_at_startup = 0
 
 colorscheme desert
 syntax on
@@ -21,6 +38,9 @@ set softtabstop=3
 set autoindent " automatic indent new lines
 set smartindent " be smart about it
 "set nowrap " do not wrap lines
+
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
 
 set ruler
 set number
