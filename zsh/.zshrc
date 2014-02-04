@@ -47,7 +47,7 @@ source $ZSH/oh-my-zsh.sh
 
 autoload zmv
 
-source ~/dotfiles/zsh/ssh-agent.sh
+source ~/dotfiles/zsh/ssh-agent2.sh
 
 # Customize to your needs...
 export GUROBI_HOME=/opt/gurobi550/linux64
