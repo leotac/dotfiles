@@ -50,7 +50,7 @@ source ~/dotfiles/zsh/ssh-agent.sh
 
 # Customize to your needs...
 export GUROBI_HOME=/opt/gurobi550/linux64
-export LD_LIBRARY_PATH=$GUROBI_HOME/lib
+export LD_LIBRARY_PATH=$GUROBI_HOME/lib:/opt/gurobi560_ampl
 
 export ILOG_LICENSE_FILE=/opt/ibm_ilog_access_keys/access+ampl.ilm
 
