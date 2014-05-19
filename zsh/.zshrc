@@ -15,6 +15,8 @@ alias lsb='ls --color=tty -B'
 alias git='nocorrect git'
 alias cp='nocorrect cp'
 alias rm='rm -i'
+alias gopen='gnome-open'
+alias less='less -S'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -64,6 +66,23 @@ go() {
 
 export EDITOR=vi
 
+function tab () {
+  # Pretty-print a tab separated table
+  if [ ! -f "$1" ]
+  then
+     echo "Specify existing file"
+     return
+  fi
+  # Skip first
+  if [ -z "$2" ]
+  then
+      ((SKIP=1))
+  else
+      ((SKIP=1+$2))
+  fi
+  echo "tail -n+$SKIP $1 | column -t -s $'\t' -n | less"
+  tail -n+"$SKIP" $1 | column -t -s $'\t' -n | less
+}
 
 # Set permissions for a web directory
 webify_permissions() {
