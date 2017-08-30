@@ -33,8 +33,8 @@ filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 filetype on
 set expandtab
-set shiftwidth=3
-set softtabstop=3
+set shiftwidth=4
+set softtabstop=4
 set autoindent " automatic indent new lines
 set smartindent " be smart about it
 "set nowrap " do not wrap lines
@@ -47,6 +47,8 @@ set number
 set showmatch
 
 
+let g:latex_to_unicode_file_types = ".*"
+
 " ---------------------------------------------------------------------------
 " Strip all trailing whitespace in file - courtesy of https://github.com/holman
 " ---------------------------------------------------------------------------
@@ -56,4 +58,6 @@ function! StripWhitespace ()
 endfunction
 map ,s :call StripWhitespace ()<CR>
 
+au BufNewFile *.py 0r ~/.vim/skeleton.py
+au BufNewFile *.scala 0r ~/.vim/skeleton.scala
 

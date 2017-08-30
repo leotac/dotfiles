@@ -15,7 +15,7 @@ alias lsb='ls --color=tty -B'
 alias git='nocorrect git'
 alias cp='nocorrect cp'
 alias rm='rm -i'
-alias gopen='gnome-open'
+alias gopen='xdg-open'
 alias less='less -S'
 
 # Set to this to use case-sensitive completion
@@ -49,83 +49,44 @@ source $ZSH/oh-my-zsh.sh
 autoload zmv
 
 # Customize to your needs...
-export GUROBI_HOME=/opt/gurobi560/linux64
-export LD_LIBRARY_PATH=$GUROBI_HOME/lib
-
-export ILOG_LICENSE_FILE=/opt/ibm_ilog_access_keys/access+ampl.ilm
-
-export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/bin:$GUROBI_HOME/bin:/home/taccari/dev/julia
-
-export LD_LIBRARY_PATH=$GUROBI_HOME/lib:/usr/local/lib
-
-# Go: Combines cd and ls for directories, or opens files in EMACS.
-go() {
-    cd $1 2> /dev/null && ls || $EDITOR $1
-}
+#export GUROBI_HOME=/opt/gurobi810/linux64
+#export LD_LIBRARY_PATH=$GUROBI_HOME/lib
+#export CPLEX_HOME=/opt/ibm/ILOG/CPLEX_Studio126
+#export PATH=/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/opt/bin:$GUROBI_HOME/bin:/home/taccari/dev/julia
+#export LD_LIBRARY_PATH=$GUROBI_HOME/lib:/usr/local/lib
+#export PATH=/opt/ampl:$CPLEX_HOME/cplex/bin/x86-64_linux:$PATH
+#export LD_LIBRARY_PATH="/opt/ibm/ILOG/CPLEX_Studio126/cplex/bin/x86-64_linux":$LD_LIBRARY_PATH
+#export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
+#export SCALA_HOME=/home/leonardo/scala/scala-2.11.8
+#export PATH=$SCALA_HOME/bin:$PATH
 
 export EDITOR=vi
 
-function tab () {
+function prettyjson () {
   # Pretty-print a tab separated table
   if [ ! -f "$1" ]
   then
      echo "Specify existing file"
      return
   fi
-  # Skip first
-  if [ -z "$2" ]
-  then
-      ((SKIP=1))
-  else
-      ((SKIP=1+$2))
-  fi
-  echo "tail -n+$SKIP $1 | column -t -s $'\t' -n | less"
-  tail -n+"$SKIP" $1 | column -t -s $'\t' -n | less
+  python -m json.tool $1 | pygmentize -l javascript
 }
 
-# Set permissions for a web directory
-webify_permissions() {
-    for i in $(ls $1); do
-        if [ -d $i ]; then
-            chmod 755 $i
-            echo "Setting directory $i to 755"
-            webify_permissions $i
-        else
-            chmod 644 $i
-            echo "Setting file $i to 644"
-        fi
-    done
-}
 
-function allf () {
-  # Recursively find files with suffix matching comma-separated list in $1.
-  # For example, "allf cpp,hpp" finds all "*.cpp" and "*.hpp".
-  find . -type f | grep -E "\.(${1//,/|})$"
-}
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/leonardo/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/leonardo/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/leonardo/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/leonardo/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-function src () {
-  # Similar to "allf" (see above),
-  # then search for a pattern among the results.
-  find . -type f -print0 | grep -zE "\.(${1//,/|})$" | xargs -0 grep -lE $2
-}
+conda activate ludovico
 
-function lsrc () {
-  # Similar to "src" (see above),
-  # then search for a pattern among the results,
-  # and pass matching files to "less".
-  src $1 $2 | xargs less -p $2
-}
-
-function msrc () {
-  # Similar to "allf" (see above),
-  # then search for a pattern among the results,
-  # and display the matching lines.
-  find . -type f -print0 | grep -zE "\.(${1//,/|})$" | xargs -0 grep -E $2
-}
-
-function svns () {
-  # Recursively find all files in an svn checkout.
-  find . -path "*.svn" -prune -or -type f -print0 | xargs -0 $@
-}
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
