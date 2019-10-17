@@ -40,7 +40,6 @@ set autoindent " automatic indent new lines
 set smartindent " be smart about it
 "set nowrap " do not wrap lines
 
-"au FileType python setl sw=2 sts=2 et
 
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
@@ -48,8 +47,6 @@ set directory=~/.vim/swap//
 set ruler
 set number
 set showmatch
-
-let g:latex_to_unicode_file_types = ".*"
 
 let g:latex_to_unicode_file_types = ".*"
 
