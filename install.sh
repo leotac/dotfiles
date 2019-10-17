@@ -11,6 +11,8 @@ echo "Creating symlinks"
 ln -fs ~/dotfiles/zsh/.zshrc ~
 ln -fs ~/dotfiles/vim/.vimrc ~
 ln -fs ~/dotfiles/vim/.vim ~
+mkdir ~/dotfiles/vim/.vim/swap
+mkdir ~/dotfiles/vim/.vim/backup
 ln -fs ~/dotfiles/git/.gitconfig ~
 ln -fs ~/dotfiles/git/.gitignore_global ~
 ln -fs ~/dotfiles/zsh/leo.zsh-theme ~/.oh-my-zsh/themes/
